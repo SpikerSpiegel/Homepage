@@ -2,10 +2,12 @@ const navSlide = () => {
   const burger = document.querySelector('.burger');
   const nav = document.querySelector('.nav-links');
   const navLinks = document.querySelectorAll('.nav-links li');
-  // Toggle Nav
+
+  // * Toggle Nav
   burger.addEventListener('click', () => {
     nav.classList.toggle('nav-active');
-    // Animate Links
+
+    // * Animate Links
     navLinks.forEach((link, index) => {
       if (link.style.animation) {
         link.style.animation = '';
@@ -15,19 +17,23 @@ const navSlide = () => {
         }s`;
       }
     });
-    // Burger Animation
+
+    // * Burger Animation
     burger.classList.toggle('toggle');
   });
 };
 navSlide();
+
 burger.addEventListener('mouseover', hover);
 burger.addEventListener('mouseleave', hoverOff);
+
 function hover(event) {
   if (!event.target.classList.contains('toggle')) {
     line1.style.marginBottom = '0.4rem';
     line3.style.marginTop = '0.4rem';
   }
 }
+
 function hoverOff() {
   if (!event.target.classList.contains('toggle')) {
     line1.style.marginBottom = '0.3rem';
